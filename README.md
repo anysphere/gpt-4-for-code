@@ -2,7 +2,7 @@
 
 We've been using GPT-4 for a few months internally, and we thought we'd highlight a few examples that have been both particularly impressive and really useful to us. Each folder here contains one example of using GPT-4 for code.
 
-Read more here: https://twitter.com/lehhacker.
+Read more here: https://twitter.com/sualehasif996/status/1635755267739598848.
 
 ### Contributions
 
