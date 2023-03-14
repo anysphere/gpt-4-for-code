@@ -1,0 +1,61 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "rules_rust",
+    sha256 = "aaaa4b9591a5dad8d8907ae2dbe6e0eb49e6314946ce4c7149241648e56a1277",
+    urls = ["https://github.com/bazelbuild/rules_rust/releases/download/0.16.1/rules_rust-v0.16.1.tar.gz"],
+)
+
+load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
+
+rules_rust_dependencies()
+
+rust_register_toolchains(
+    edition = "2021",
+    versions = ["1.66.1"],
+)
+
+
+load("@rules_rust//crate_universe:repositories.bzl", "crate_universe_dependencies")
+
+crate_universe_dependencies()
+
+load("@rules_rust//crate_universe:defs.bzl", "crate", "crates_repository", "render_config")
+
+crates_repository(
+    name = "global_crate_index",
+    cargo_lockfile = "//:Cargo.lock",
+    lockfile = "//:Cargo.Bazel.lock",
+    packages = {
+        "tree-sitter": crate.spec(
+            version = "=0.20.9",
+        ),
+    },
+    render_config = render_config(
+        default_package_name = "",
+    ),
+)
+
+load("@global_crate_index//:defs.bzl", global_crate_index = "crate_repositories")
+
+global_crate_index()
+
+
+load(
+    "//:tree_sitter.bzl",
+    "tree_sitter_go",
+    "tree_sitter_javascript",
+    "tree_sitter_python",
+    "tree_sitter_rust",
+    "tree_sitter_typescript",
+)
+
+tree_sitter_python(name = "tree_sitter_python")
+
+tree_sitter_rust(name = "tree_sitter_rust")
+
+tree_sitter_go(name = "tree_sitter_go")
+
+tree_sitter_typescript(name = "tree_sitter_typescript")
+
+tree_sitter_javascript(name = "tree_sitter_javascript")
