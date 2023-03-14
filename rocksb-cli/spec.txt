@@ -1,0 +1,9 @@
+Create a CLI with the following features:
+
+1. The following commands:
+- get: Get the value of a key from the database.
+- delete: Delete a key from the database.
+- list: List all the keys in the database.
+- list+decompress: List a specified number of keys in the database, with optional jump parameter, and decompress the values using flate2.
+
+2. The CLI takes in the path of the RocksDB to open. It should optionally ask if the database should be created if it doesnt exist.
