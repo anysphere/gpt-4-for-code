@@ -1,4 +1,4 @@
-# Generate Website
+## Generate Website
 
 An html website with embedded js and tailwind for styling.
 
