@@ -13,8 +13,8 @@ Scenario: Legacy python code in the `py` folder for processing CSV files, and we
 
 The full prompt:
 
-![full-generation-prompt.png]
+![Prompt: "what should i add here to support the group_by_column_and_filter method in my c++ code too"](full-generation-prompt.png)
 
 Explaining parts:
 
-![explain-the-binds.png]
+![Prompt: "whoa. can you give more detail on the predefined_column_filters translation, including the python code you copied from"](explain-the-binds.png)
