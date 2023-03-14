@@ -14,3 +14,14 @@ Spec:
 * Outline all the buttons, with a golden color.
 * Make the website really readable.
 * Each section should have atleast 2 sections with clear black titles. 
+
+
+#### Screenshots
+
+The prompt:
+
+![](website.png)
+
+The generated website (0-shot, first try):
+
+![](rendered-website.png)
